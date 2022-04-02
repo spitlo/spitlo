@@ -16,10 +16,10 @@ git clone https://github.com/spitlo/karakter tmp/karakter
 git clone https://github.com/spitlo/morsh tmp/morsh
 
 {
-  sed "s/###DATE###/$today/g" < header.md
+  sed "s/###DATE###/$today/g" < assets/header.md
   printf "\n## About\n\n"
-  tmp/karakter/bash/karakter --hi --lm < about.md
+  tmp/karakter/bash/karakter --hi --lm < assets/about.md
   printf "\n## Once again in morse\n\n\`\`\`txt\n"
-  tmp/morsh/morsh --encode < about.md
+  tmp/morsh/morsh --encode < assets/about.md
   printf "\n\`\`\`\n"
 } > README.md
