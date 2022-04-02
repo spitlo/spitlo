@@ -3,5 +3,12 @@
 Sorry for the mess, I’m testing GitHub Actions at the moment.
 
 ---
-THı$ ı$ @ te$t. Шe aгe ┪e$Łiπ9. 
 
+## About
+
+ṪHIȘ IȘ Ā ṪĒȘṪ. ШĒ ĀŔĒ ṪĒȘṪIПG. 
+
+
+## Once again in morse
+
+```- .... .. ... / .. ... / .- / - . ... - / .-- . / .- .-. . / - . ... - .. -. --. / 

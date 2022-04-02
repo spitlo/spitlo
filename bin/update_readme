@@ -11,5 +11,12 @@ cat header.md > README.md
 
 mkdir -p tmp
 git clone https://github.com/spitlo/karakter tmp/karakter
+git clone https://github.com/spitlo/morsh tmp/morsh
 
-cat about.md | tmp/karakter/bash/karakter --md --cp >> README.md
+{
+  printf "\n## About\n\n"
+  tmp/karakter/bash/karakter --hi --lm < about.md
+  printf "\n## Once again in morse\n\n\`\`\`"
+  tmp/morsh/morsh --encode < about.md
+  printf "\n\`\`\`\n"
+} >> README.md

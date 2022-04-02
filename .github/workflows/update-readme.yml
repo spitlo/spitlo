@@ -1,9 +1,10 @@
 name: Update README.md
 
 on:
+  push:
+  workflow_dispatch:
   schedule:
     - cron: '0 8 * * *'
-  workflow_dispatch:
 
 jobs:
   build:
@@ -11,15 +12,13 @@ jobs:
     name: Update README.md
     steps:
     - uses: actions/checkout@v2
-    - name: Update README
+    - name: Run update script
       shell: bash
       run: bin/update_readme
 
     - name: Commit and push if changed
       run: |-
-        git add .
-        git diff
         git config --global user.email "spitlo@users.noreply.github.com"
         git config --global user.name "GitHub Action Bot"
-        git commit -m "Updated README" -a || echo "No changes to commit"
+        git diff --quiet README.md || git commit -m "Updated README.md" README.md
         git push
