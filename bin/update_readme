@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -eu
+
+trap clean EXIT
+
+function clean() {
+  rm -rf tmp
+}
+
+cat header.md > README.md
+
+mkdir -p tmp
+git clone https://github.com/spitlo/karakter tmp/karakter
+
+cat about.md | tmp/karakter/bash/karakter --md --cp >> README.md

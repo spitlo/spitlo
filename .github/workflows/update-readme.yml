@@ -1,0 +1,25 @@
+name: Update README.md
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Update README.md
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update README
+      shell: bash
+      run: bin/update_readme
+
+    - name: Commit and push if changed
+      run: |-
+        git add .
+        git diff
+        git config --global user.email "spitlo@users.noreply.github.com"
+        git config --global user.name "GitHub Action Bot"
+        git commit -m "Updated README" -a || echo "No changes to commit"
+        git push
