@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 6 * * *'
 
 jobs:
   build:
@@ -20,5 +20,5 @@ jobs:
       run: |-
         git config --global user.email "spitlo@users.noreply.github.com"
         git config --global user.name "GitHub Action Bot"
-        git diff --quiet README.md || git commit -m "Updated README.md" README.md
+        git diff --quiet README.md || git commit -m "Update README.md" README.md
         git push

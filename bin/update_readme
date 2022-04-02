@@ -7,16 +7,19 @@ function clean() {
   rm -rf tmp
 }
 
-cat header.md > README.md
+# Variables
+today=$(date +"%Y-%m-%d")
 
+# Set up environment
 mkdir -p tmp
 git clone https://github.com/spitlo/karakter tmp/karakter
 git clone https://github.com/spitlo/morsh tmp/morsh
 
 {
+  sed "s/###DATE###/$today/g" < header.md
   printf "\n## About\n\n"
   tmp/karakter/bash/karakter --hi --lm < about.md
   printf "\n## Once again in morse\n\n\`\`\`txt\n"
   tmp/morsh/morsh --encode < about.md
   printf "\n\`\`\`\n"
-} >> README.md
+} > README.md
