@@ -13,7 +13,3 @@
 |  Sierra     //     Papa     //     India     //     Tango     //     Lima     //     Oscar    -
 + ----------------------------------------- ----------- -------- -----  ---   ----   --  -    -     -
 ```
-
-# Hello!
-
-Sorry for the mess, I’m testing GitHub Actions at the moment.
