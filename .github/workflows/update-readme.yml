@@ -8,6 +8,7 @@ on:
     - cron: '0 6 * * *'
 
 jobs:
+  if: false 
   build:
     runs-on: ubuntu-latest
     name: Update README.md
